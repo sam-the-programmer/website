@@ -24,10 +24,11 @@
       />
     </ParallaxLayer>
   {/each}
+
   <ParallaxLayer offset={0}>
     <div
       class="grid place-items-center w-screen h-screen
-      font-extrabold text-[20vmin] p-6 text-center text-black"
+      font-extrabold text-[20vmin] z-50 p-6 text-center text-black"
     >
       <h1 id="title">Hi, I'm Sam</h1>
     </div>
@@ -41,9 +42,10 @@
         <h2>My Aspirations</h2>
         <p>
           Currently a student, I hope to become a machine learning engineer and
-          researcher in the future, inspired by companies like <a href="https://deepmind.com">
-            <span
-              class="text-bg bg-gradient-to-r from-sky-500 to-blue-500"
+          researcher in the future, inspired by companies like <a
+            href="https://deepmind.com"
+          >
+            <span class="text-bg bg-gradient-to-r from-sky-500 to-blue-500"
               >DeepMind</span
             >
           </a>
@@ -198,7 +200,7 @@
   }
 
   .content-container > div {
-    @apply w-10/12 text-center flex flex-col items-center gap-10 px-10;
+    @apply w-10/12 max-w-4xl text-center flex flex-col items-center gap-10 px-10;
   }
 
   .content-container h2 {
@@ -209,7 +211,9 @@
     @apply bg-clip-text font-bold text-transparent;
   }
 
-  h1, h2, p {
+  h1,
+  h2,
+  p {
     z-index: 49;
   }
 </style>
