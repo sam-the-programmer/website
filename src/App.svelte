@@ -17,7 +17,7 @@
 <Parallax class="bg-black text-white" sections={5}>
   <!-- Title Section -->
   {#each scrollableStuff as scrollSet}
-    <ParallaxLayer offset={0} rate={scrollSet[0]} class="z-10">
+    <ParallaxLayer offset={0} rate={scrollSet[0]}>
       <div
         class="h-screen bg-white"
         style="width: {100 / i}vw; margin-left: {(100 * scrollSet[1]) / i}vw;"
@@ -41,10 +41,12 @@
       <div>
         <h2>My Aspirations</h2>
         <p>
-          Currently a student, I hope to become a machine learning engineer and
-          researcher in the future, inspired by companies like <a
-            href="https://deepmind.com"
+          Currently a student, I hope to become a <span
+            class="text-bg bg-gradient-to-r from-sky-400 to-purple-400"
+            >machine learning engineer</span
           >
+          and researcher in the future, inspired by companies like
+          <a href="https://deepmind.com">
             <span class="text-bg bg-gradient-to-r from-sky-500 to-blue-500"
               >DeepMind</span
             >
@@ -170,19 +172,15 @@
                 class="text-green-500 font-bold">nsumer</span
               ></span
             >
-          </a> project, a fullstack PWA that helps you reduce the greenhouse gases
-          of your shopping.
-        </p>
-        <p>
-          Other projects include <span
-            class="text-bg bg-gradient-to-r from-sky-400 to-purple-400"
+          </a>
+          project, a fullstack PWA that helps you reduce the greenhouse gases of
+          your shopping. <br />
+          Other projects include
+          <span class="text-bg bg-gradient-to-r from-sky-400 to-purple-400"
             >machine learning</span
-          >
-          libraries,
-          <span class="text-bg bg-gradient-to-r from-rose-500 to-amber-300"
+          > libraries, <span class="text-bg bg-gradient-to-r from-rose-500 to-amber-300"
             >data forecasting</span
-          >
-          dashboards and many more...
+          > dashboards and many more...
         </p>
       </div>
     </div>
@@ -200,7 +198,7 @@
   }
 
   .content-container > div {
-    @apply w-10/12 max-w-4xl text-center flex flex-col items-center gap-10 px-10;
+    @apply w-10/12 max-w-xl text-center flex flex-col items-center gap-10 px-10;
   }
 
   .content-container h2 {
