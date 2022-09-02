@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200">
+    <g>
+        <circle cx="100" cy="100" r="100" fill="white" />
+        <text x="50%" y="50%" text-anchor="middle" dy=".35em">
+            S
+        </text>
+        <style>
+            text {
+                font-family: sans-serif;
+                font-size: 150px;
+            }
+        </style>
+    </g>
+</svg>
