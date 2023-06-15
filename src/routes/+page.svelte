@@ -95,7 +95,7 @@
 			>
 			<a href="https://go.dev/"
 				><span class="selection:bg-red-600 hover:bg-red-600 hover:text-black px-4 text-red-600"
-					>Go</span
+					>GoLang</span
 				></a
 			>
 		</div>
