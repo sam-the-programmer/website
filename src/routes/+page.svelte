@@ -42,10 +42,7 @@
 </script>
 
 <section class="grid-center">
-	<h1
-		class="text-center text-9xl font-extrabold invert-text px-2 xs:px-8"
-		data-para-both=".8,.6"
-	>
+	<h1 class="text-center text-9xl font-extrabold invert-text px-2 xs:px-8" data-para-both=".8,.6">
 		Hi, I'm Sam.
 	</h1>
 </section>
@@ -54,6 +51,7 @@
 		class="text-6xl w-8/12 text-center invert-text"
 		data-para-both="-1,-.6"
 		data-para-offset="1"
+		aria-details="Description of Who I am."
 	>
 		I'm a student, machine learning researcher, and fullstack dev.
 	</h1>
@@ -64,19 +62,19 @@
 	</div>
 	<div class="flex justify-evenly text-5xl invert-text w-full" id="tools">
 		<div data-para-both=".5,-.35" data-para-offset="2">
-			<a href="https://python.org"
+			<a href="https://python.org" aria-details="Python"
 				><span class="selection:bg-blue-600 hover:bg-blue-600 hover:text-black px-4 text-blue-600"
 					>Python</span
 				></a
 			>
-			<a href="https://kit.svelte.dev"
+			<a href="https://kit.svelte.dev" aria-details="SvelteKit"
 				><span class="selection:bg-cyan-500 hover:bg-cyan-500 hover:text-black px-4 text-cyan-500"
 					>Svelte</span
 				></a
 			>
 		</div>
 		<div data-para-both=".5,-.75" data-para-offset="2">
-			<a href="https://www.typescriptlang.org/"
+			<a href="https://www.typescriptlang.org/" aria-details="TypeScript"
 				><span
 					class="selection:bg-orange-700 hover:bg-orange-700 hover:text-black px-4 text-orange-700"
 					>TypeScript</span
@@ -84,18 +82,19 @@
 			>
 			<a href="https://dotnet.microsoft.com/en-gb/languages/csharp"
 				><span
+					aria-details="C Sharp"
 					class="selection:bg-purple-500 hover:bg-purple-500 hover:text-black px-4 text-purple-500"
 					>C#</span
 				></a
 			>
 		</div>
 		<div data-para-both=".5,-1.25" data-para-offset="2">
-			<a href="https://isocpp.org/"
+			<a href="https://isocpp.org/" aria-details="C Plus Plus"
 				><span class="selection:bg-lime-600 hover:bg-lime-600 hover:text-black px-4 text-lime-600"
 					>C++</span
 				></a
 			>
-			<a href="https://go.dev/"
+			<a href="https://go.dev/" aria-details="GoLang"
 				><span class="selection:bg-red-600 hover:bg-red-600 hover:text-black px-4 text-red-600"
 					>Go</span
 				></a
@@ -108,7 +107,10 @@
 		<h1 class="font-bold text-7xl">My Projects Include...</h1>
 	</div>
 	<div class="text-6xl mb-4" data-para-x="-1.5" data-para-offset="3">
-		<a href="https://econsumerapp.web.app">
+		<a
+			href="https://econsumerapp.web.app"
+			aria-details="I am the lead developer of Econsumer, an app that reduces your shopping's food miles."
+		>
 			<h3 class="inline-flex font-bold text-purple-800">
 				<span class="text-fuchsia-500">eco</span>
 				<span>nsumer</span>
@@ -116,14 +118,20 @@
 		</a>
 	</div>
 	<div class="text-6xl mb-4" data-para-x="-2.2" data-para-offset="3">
-		<a href="https://github.com/sam-the-programmer/sandcastle">
+		<a
+			href="https://github.com/sam-the-programmer/sandcastle"
+			aria-details="I have created SandCastle, a build tool for developers."
+		>
 			<h3 class="inline-flex font-bold text-cyan-600">
 				<span>SandCastle</span>
 			</h3>
 		</a>
 	</div>
 	<div class="text-6xl" data-para-x="-2.9" data-para-offset="3">
-		<a href="https://marketplace.visualstudio.com/items?itemName=sam-the-programmer.jupyter-theme">
+		<a
+			href="https://marketplace.visualstudio.com/items?itemName=sam-the-programmer.jupyter-theme"
+			aria-details="My VS Code extension 'Jupyter Theme' has over 19 thousand installs."
+		>
 			<h3 class="inline-flex font-bold text-lime-500">
 				<span>Jupyter Theme</span>
 			</h3>
@@ -135,7 +143,7 @@
 		<h1 class="title">Find Me On...</h1>
 	</div>
 	<div class="flex justify-evenly gap-14 items-center font-bold text-3xl" id="contacts">
-		<a href="https://github.com/sam-the-programmer">
+		<a href="https://github.com/sam-the-programmer" aria-details="My GitHub Profile Link">
 			<div data-para-both="1,-0.5" data-para-offset="4">
 				<div>
 					<svg
@@ -157,7 +165,7 @@
 				<p class="text-black opacity-80">GitHub</p>
 			</div>
 		</a>
-		<a href="https://stackoverflow.com/users/15515166/samtheprogrammer">
+		<a href="https://stackoverflow.com/users/15515166/samtheprogrammer" aria-details="My StackOverflow Profile Link">
 			<div data-para-both="-1,-0.5" data-para-offset="4">
 				<div>
 					<svg

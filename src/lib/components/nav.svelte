@@ -9,8 +9,7 @@
 	</div>
 	<div class="flex gap-8">
 		<a class="hover" href="/">Home</a>
-		<a class="hover" href="/">About</a>
-		<a class="hover" href="/">Contact</a>
+		<a class="hover" href="https://github.com/sam-the-programmer/">Contact</a>
 	</div>
 </div>
 
