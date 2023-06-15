@@ -1,51 +1,3 @@
-<script lang="ts">
-	import { onMount } from "svelte";
-
-	onMount(() => {
-		let prefersReducedMotion = false;
-		prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-		if (!prefersReducedMotion) {
-			let nodesX = document.querySelectorAll("[data-para-x]");
-			let nodesY = document.querySelectorAll("[data-para-y]");
-			let nodesBoth = document.querySelectorAll("[data-para-both]");
-
-			window.addEventListener("scroll", (_) => {
-				nodesX.forEach((node: any) => {
-					let offsetValue: any = node.getAttribute("data-para-x");
-					let subtractValue: any = node.getAttribute("data-para-offset");
-					subtractValue = subtractValue ? subtractValue : 0;
-					subtractValue = Number(subtractValue) * window.innerHeight;
-
-					node.style.transform = `translateX(${(window.scrollY - subtractValue) * offsetValue}px)`;
-				});
-
-				nodesY.forEach((node: any) => {
-					let offsetValue: any = node.getAttribute("data-para-y");
-					let subtractValue: any = node.getAttribute("data-para-offset");
-					subtractValue = subtractValue ? subtractValue : 0;
-					subtractValue = Number(subtractValue) * window.innerHeight;
-
-					node.style.transform = `translateY(${(window.scrollY - subtractValue) * offsetValue}px)`;
-				});
-
-				nodesBoth.forEach((node: any) => {
-					let offsetValue: any = node.getAttribute("data-para-both").split(",");
-					let x = Number(offsetValue[0]);
-					let y = Number(offsetValue[1]);
-					let subtractValue: any = node.getAttribute("data-para-offset");
-					subtractValue = subtractValue ? subtractValue : 0;
-					subtractValue = Number(subtractValue) * window.innerHeight;
-
-					node.style.transform = `translate(${(window.scrollY - subtractValue) * x}px, ${
-						(window.scrollY - subtractValue) * y
-					}px)`;
-				});
-			});
-		}
-	});
-</script>
-
 <section class="grid-center">
 	<h1 class="text-center text-9xl font-extrabold invert-text px-2 xs:px-8" data-para-both=".8,.6">
 		Hi, I'm Sam.
@@ -53,7 +5,7 @@
 </section>
 <section class="grid-center">
 	<h1 class="text-6xl w-8/12 text-center invert-text" data-para-both="-1,-.6" data-para-offset="1">
-		I'm a student, machine learning researcher, and fullstack dev.
+		I'm a student, machine learning researcher, and fullstack web developer.
 	</h1>
 </section>
 <section class="flex-center flex-col gap-8">
@@ -62,25 +14,28 @@
 	</div>
 	<div class="flex justify-evenly text-5xl invert-text w-full" id="tools">
 		<div data-para-both=".5,-.35" data-para-offset="2">
-			<a href="https://python.org"
+			<a href="https://python.org" target="_blank" rel="noopener noreferrer"
 				><span class="selection:bg-blue-600 hover:bg-blue-600 hover:text-black px-4 text-blue-600"
 					>Python</span
 				></a
 			>
-			<a href="https://kit.svelte.dev"
+			<a href="https://kit.svelte.dev" target="_blank" rel="noopener noreferrer"
 				><span class="selection:bg-cyan-500 hover:bg-cyan-500 hover:text-black px-4 text-cyan-500"
 					>Svelte</span
 				></a
 			>
 		</div>
 		<div data-para-both=".5,-.75" data-para-offset="2">
-			<a href="https://www.typescriptlang.org/"
+			<a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer"
 				><span
 					class="selection:bg-orange-700 hover:bg-orange-700 hover:text-black px-4 text-orange-700"
 					>TypeScript</span
 				></a
 			>
-			<a href="https://dotnet.microsoft.com/en-gb/languages/csharp"
+			<a
+				href="https://dotnet.microsoft.com/en-gb/languages/csharp"
+				target="_blank"
+				rel="noopener noreferrer"
 				><span
 					class="selection:bg-purple-500 hover:bg-purple-500 hover:text-black px-4 text-purple-500"
 					>C#</span
@@ -88,12 +43,12 @@
 			>
 		</div>
 		<div data-para-both=".5,-1.25" data-para-offset="2">
-			<a href="https://isocpp.org/"
+			<a href="https://isocpp.org/" target="_blank" rel="noopener noreferrer"
 				><span class="selection:bg-lime-600 hover:bg-lime-600 hover:text-black px-4 text-lime-600"
 					>C++</span
 				></a
 			>
-			<a href="https://go.dev/"
+			<a href="https://go.dev/" target="_blank" rel="noopener noreferrer"
 				><span class="selection:bg-red-600 hover:bg-red-600 hover:text-black px-4 text-red-600"
 					>GoLang</span
 				></a
@@ -105,26 +60,46 @@
 	<div class="mb-10" data-para-x="1.5" data-para-offset="3">
 		<h1 class="font-bold text-7xl">My Projects Include...</h1>
 	</div>
-	<div class="text-6xl mb-4" data-para-x="-1.5" data-para-offset="3">
-		<a href="https://econsumerapp.web.app">
-			<h2 class="inline-flex font-bold text-purple-800">
+	<div
+		class="project text-6xl px-4 py-1 duration-150 hover:bg-purple-800 mb-4"
+		data-para-x="-1.5"
+		data-para-offset="3"
+	>
+		<a href="https://econsumerapp.web.app" target="_blank" rel="noopener noreferrer">
+			<h2 class="inline-flex text-purple-800 selection:bg-purple-800">
 				<span class="text-fuchsia-500">eco</span>
 				<span>nsumer</span>
 			</h2>
 		</a>
 	</div>
-	<div class="text-6xl mb-4" data-para-x="-2.2" data-para-offset="3">
-		<a href="https://github.com/sam-the-programmer/sandcastle">
-			<h3 class="inline-flex font-bold text-cyan-600">
+	<div
+		class="project text-6xl px-4 py-1 duration-150 hover:bg-cyan-500 mb-4"
+		data-para-x="-2.2"
+		data-para-offset="3"
+	>
+		<a
+			href="https://github.com/sam-the-programmer/sandcastle"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<h2 class="inline-flex text-cyan-500 selection:bg-cyan-500">
 				<span>SandCastle</span>
-			</h3>
+			</h2>
 		</a>
 	</div>
-	<div class="text-6xl" data-para-x="-2.9" data-para-offset="3">
-		<a href="https://marketplace.visualstudio.com/items?itemName=sam-the-programmer.jupyter-theme">
-			<h3 class="inline-flex font-bold text-lime-500">
+	<div
+		class="project text-6xl px-4 py-1 duration-150 hover:bg-lime-500"
+		data-para-x="-2.9"
+		data-para-offset="3"
+	>
+		<a
+			href="https://marketplace.visualstudio.com/items?itemName=sam-the-programmer.jupyter-theme"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<h2 class="inline-flex text-lime-500 selection:bg-lime-500">
 				<span>Jupyter Theme</span>
-			</h3>
+			</h2>
 		</a>
 	</div>
 </section>
@@ -133,7 +108,7 @@
 		<h1 class="title">Find Me On...</h1>
 	</div>
 	<div class="flex justify-evenly gap-14 items-center font-bold text-3xl" id="contacts">
-		<a href="https://github.com/sam-the-programmer">
+		<a href="https://github.com/sam-the-programmer" target="_blank" rel="noopener noreferrer">
 			<div data-para-both="1,-0.5" data-para-offset="4">
 				<div>
 					<svg
@@ -155,15 +130,14 @@
 				<p class="text-black opacity-80">GitHub</p>
 			</div>
 		</a>
-		<a href="https://stackoverflow.com/users/15515166/samtheprogrammer">
+		<a
+			href="https://stackoverflow.com/users/15515166/samtheprogrammer"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
 			<div data-para-both="-1,-0.5" data-para-offset="4">
 				<div>
-					<svg
-						aria-hidden="true"
-						class="svg-icon iconLogoGlyphMd native native"
-						width="64"
-						height="64"
-						viewBox="0 0 32 37"
+					<svg aria-hidden="true" width="64" height="64" viewBox="0 0 32 37"
 						><path d="M26 33v-9h4v13H0V24h4v9h22Z" fill="#BCBBBB" /><path
 							d="m21.5 0-2.7 2 9.9 13.3 2.7-2L21.5 0ZM26 18.4 13.3 7.8l2.1-2.5 12.7 10.6-2.1 2.5ZM9.1 15.2l15 7 1.4-3-15-7-1.4 3Zm14 10.79.68-2.95-16.1-3.35L7 23l16.1 2.99ZM23 30H7v-3h16v3Z"
 							fill="#F48024"
@@ -194,6 +168,13 @@
 
 	#contacts > a > div {
 		@apply flex flex-col justify-center items-center gap-3;
+	}
+
+	.project:hover {
+		span,
+		h2 {
+			@apply text-black;
+		}
 	}
 
 	/* * {
