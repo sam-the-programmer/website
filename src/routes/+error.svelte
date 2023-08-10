@@ -1,9 +1,16 @@
-<div class="grid-center" style:height="100vh">
-	<div class="gap-10 flex flex-col justify-center items-center">
-		<h1 class="text-8xl font-bold text-center">Oops!</h1>
-		<h2 class="text-5xl font-light">Something went wrong.</h2>
-		<a href="/">
-			<h3 class="px-4 py-1 has-hover text-5xl text-center invert-text font-extrabold">Let's Go Home</h3>
-		</a>
+<script lang="ts">
+	import { page } from "$app/stores";
+</script>
+
+<section class="grid-center h-screen">
+	<div class="absolute w-screen h-screen grid-center">
+		<div class="w-96 blur-3xl animate-float aspect-square rounded-full bg-secondary"></div>
 	</div>
-</div>
+	<div class="text-center h-full flex-center flex-col">
+		<h1 class="font-bold text-5xl">Oops.</h1>
+		<h2 class="text-3xl">
+			<span>{$page.status}</span>
+			<span>{$page.error?.message}</span>
+		</h2>
+	</div>
+</section>

@@ -5,76 +5,126 @@
 @tailwind utilities;
 
 @layer base {
-	body {
-		font-family: "Space Grotesk", sans-serif;
-		/* color: whitesmoke; */
+	html {
+		@apply overflow-x-hidden;
 	}
 
-	h1 {
+	body {
+		font-family: "Space Grotesk", sans-serif;
+		@apply bg-base text-base-content overflow-hidden
+			selection:bg-base-content selection:text-base selection:bg-opacity-90;
+	}
+
+	* {
+		cursor: none;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	p,
+	span {
 		text-wrap: balanced;
 	}
 
+	a {
+		@apply link;
+	}
+
+	section {
+		@apply w-screen h-screen;
+	}
+
 	::-webkit-scrollbar {
-		background-color: white;
-		opacity: 0.2;
-		border-radius: 5px;
-		width: 10px;
+		@apply w-3;
+	}
+
+	::-webkit-scrollbar-track {
+		@apply bg-base;
 	}
 
 	::-webkit-scrollbar-thumb {
-		background-color: #dadada;
-		border-radius: 5px;
-		width: 100%;
+		@apply bg-green-200 rounded-full;
+	}
+}
+
+@layer components {
+	.follower {
+		transition: width 100ms ease-in-out, height 100ms ease-in-out,
+			background-color 100ms ease-in-out, box-shadow 100ms ease-in-out, filter 100ms ease-in-out;
+	}
+
+	:has(.link:hover) .follower {
+		@apply w-14;
+	}
+
+	:has(.special.link:hover) .follower {
+		@apply w-24 ring-8 ring-green-400 ring-opacity-70;
+	}
+
+	.special {
+		@apply text-green-600 font-bold h-full;
 	}
 }
 
 @layer utilities {
-	:where(.invert-text) {
-		color: orange;
+	.hide-scrollbar::-webkit-scrollbar {
+		display: none;
 	}
 
-	.invert-text {
-		mix-blend-mode: difference;
-		transition: color 150ms ease-in, background-color 150ms ease-in;
-	}
-
-	.invert-text::selection,
-	.invert-text *::selection {
-		background: orange;
-		color: black;
-	}
-
-	.invert-text.has-hover:hover {
-		color: black;
-		background-color: orange;
-	}
-
-	.bg-base {
-		--s: 80px; /* the size */
-		--c: white;
-
-		--_s: calc(2 * var(--s)) calc(2 * var(--s));
-		--_g: 35.36% 35.36% at;
-		--_c: #0000 66%, #dadada 68% 70%, #0000 72%;
-		background: radial-gradient(var(--_g) 100% 25%, var(--_c)) var(--s) var(--s) / var(--_s),
-			radial-gradient(var(--_g) 0 75%, var(--_c)) var(--s) var(--s) / var(--_s),
-			radial-gradient(var(--_g) 100% 25%, var(--_c)) 0 0 / var(--_s),
-			radial-gradient(var(--_g) 0 75%, var(--_c)) 0 0 / var(--_s),
-			repeating-conic-gradient(var(--c) 0 25%, #0000 0 50%) 0 0 / var(--_s),
-			radial-gradient(var(--_c)) 0 calc(var(--s) / 2) / var(--s) var(--s) var(--c);
-	}
-
-	.glass {
-		background-color: rgba(255, 255, 255, 0.15);
-		backdrop-filter: blur(4px);
+	.needs-hover {
+		@media (hover: none) {
+			@apply hidden;
+		}
 	}
 
 	.grid-center {
-		display: grid;
-		place-items: center;
+		@apply grid place-items-center;
 	}
 
 	.flex-center {
 		@apply flex justify-center items-center;
+	}
+
+	.animate-float {
+		@media (prefers-reduced-motion: no-preference) {
+			animation: float 4s ease-in-out infinite;
+		}
+	}
+
+	.animate-float-sm {
+		@media (prefers-reduced-motion: no-preference) {
+			animation: float-sm 4s ease-in-out infinite;
+		}
+	}
+
+	@keyframes float {
+		0% {
+			transform: translateY(0px);
+		}
+
+		50% {
+			transform: translateY(-2rem);
+		}
+
+		100% {
+			transform: translateY(0px);
+		}
+	}
+
+	@keyframes float-sm {
+		0% {
+			transform: translateY(0px);
+		}
+
+		50% {
+			transform: translateY(-0.5rem);
+		}
+
+		100% {
+			transform: translateY(0px);
+		}
 	}
 }

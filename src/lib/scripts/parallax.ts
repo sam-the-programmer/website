@@ -6,7 +6,6 @@ export function parallaxInit() {
         prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
         let widthLargeEnough = window.innerWidth > 830;
-        console.log(widthLargeEnough, window.innerWidth);
 
         if (!prefersReducedMotion && widthLargeEnough) {
             let nodesX = document.querySelectorAll("[data-para-x]");
@@ -15,8 +14,8 @@ export function parallaxInit() {
 
             window.addEventListener("scroll", (_) => {
                 nodesX.forEach((node: any) => {
-                    let offsetValue: any = node.getAttribute("data-para-x");
-                    let subtractValue: any = node.getAttribute("data-para-offset");
+                    let offsetValue: number = node.getAttribute("data-para-x");
+                    let subtractValue: number = node.getAttribute("data-para-offset");
                     subtractValue = subtractValue ? subtractValue : 0;
                     subtractValue = Number(subtractValue) * window.innerHeight;
 

@@ -4,14 +4,20 @@ const config = {
 
   theme: {
     extend: {
+      colors: {
+        "base": "#f5f5ef",
+        "base-content": "#0d0d0d",
+        "primary": "#276b18",
+        "secondary": "#0CAAFC",
+      },
       screens: {
-        xs: "480px",
-        xxs: "320px",
+        "mini": "275px",
+        "tiny": "320px",
       }
-    }
+    },
   },
 
-  plugins: []
+  plugins: [],
 };
 
 module.exports = config;
