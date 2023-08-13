@@ -52,7 +52,7 @@
 	});
 </script>
 
-<div class="flex gap-3 items-center max-w-[100vw] overflow-x-hidden p-4" bind:this={scrollable}>
+<div class="flex gap-3 items-center max-w-[100vw] overflow-hidden p-4" bind:this={scrollable}>
 	{#each [...projects.entries()] as [i, p]}
 		<a href={p.link} in:fly={{duration: 800, y: 10, delay: 500 + i * 100}} out:fly={{duration: 800, y: 10, delay: i * 100}}>
 			<div
