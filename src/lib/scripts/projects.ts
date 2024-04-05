@@ -53,7 +53,7 @@ export const projectsRight = [
     },
     {
         name: "VSCode Juptyer Theme",
-        description: "Jupyter notebook theme for VS Code - over 20k installs.",
+        description: "Jupyter notebook theme for VS Code - almost 40k installs.",
         link: "https://github.com/sam-the-programmer/vscode-jupyter-theme",
         tool: "TypeScript",
         col: "#007acc"
