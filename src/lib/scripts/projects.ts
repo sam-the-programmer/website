@@ -1,7 +1,7 @@
 export const projectsLeft = [
     {
         name: "Econsumer",
-        description: "A PWA that reduces the carbon footprint of your groceries.",
+        description: "A PWA that reduces the carbon footprint of your groceries. Winner of the PA Raspberry Pi competition 2022.",
         link: "https://econsumer.vercel.app/",
         tool: "TypeScript",
         col: "#007acc"
@@ -45,15 +45,15 @@ export const projectsRight = [
         col: "#00add8"
     },
     {
-        name: "3D View",
-        description: "A desktop app that makes your 2D screen 3D with machine learning.",
-        link: "https://github.com/TetrahedronAI/circle",
+        name: "Lifeline",
+        description: "A large-language-model based AI health assistant. My team's entry into the PA Raspberry Pi competition 2024.",
+        link: "https://github.com/sam-the-programmer/lifeline",
         tool: "Python",
         col: "#f0db4f"
     },
     {
         name: "VSCode Juptyer Theme",
-        description: "Jupyter notebook theme for VS Code - over 20k installs.",
+        description: "Jupyter notebook theme for VS Code - almost 40k installs.",
         link: "https://github.com/sam-the-programmer/vscode-jupyter-theme",
         tool: "TypeScript",
         col: "#007acc"
