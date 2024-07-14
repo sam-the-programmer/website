@@ -2,6 +2,7 @@
     flex gap-10 items-center px-10 z-40
     backdrop-blur-lg text-lg bg-base bg-opacity-10">
     <a class="link" href="/">Home</a>
+    <a class="link" href="/blog">Blog</a>
     <a class="link" href="/#projects">Projects</a>
     <a class="link" href="/#support">Support</a>
     <a class="link" href="/#contact">Contact</a>

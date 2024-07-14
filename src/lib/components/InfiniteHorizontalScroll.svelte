@@ -27,7 +27,7 @@
 			if (rate > 0) {
 				if (scrollable.firstElementChild) {
 					if (scrollable.firstElementChild.getBoundingClientRect().right < 0) {
-						dist = rate;
+						dist = 0;
 
 						let node = scrollable.firstElementChild;
 						scrollable.removeChild(node);

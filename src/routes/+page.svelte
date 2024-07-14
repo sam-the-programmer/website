@@ -92,6 +92,7 @@
 	</IntersectionObserver>
 </section>
 
+
 <section
 	class="flex flex-col gap-5 items-end text-right justify-center p-10"
 	id="support"
@@ -118,7 +119,7 @@
 		data-para-both=".3,-0.9"
 		src="/img/leaves.webp"
 		alt="Leaves"
-		class="absolute -left-[10vw] bottom-auto sm:-bottom-[220vh] w-[50vw] hover:w-[51vw]
+		class="absolute -left-[10vw] bottom-auto sm:-bottom-[220vh] w-[50vw] hover:w-[51vw] link
 		transition-[width] duration-300 ease-in-out z-10 saturate-150 aspect-square rounded-full"
 	/>
 </section>
