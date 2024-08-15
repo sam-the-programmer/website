@@ -44,7 +44,7 @@
 	let nodeContact: HTMLElement;
 </script>
 
-<section id="landing" class="flex justify-between items-center py-10 px-24">
+<section id="landing" class="flex justify-between items-center py-10 px-10 sm:px-24">
 	<div data-para-offset="0" data-para-x="-.7">
 		<a href="#landing">
 			<h1 class="link font-bold text-8xl">Hi, I'm Sam.</h1>
@@ -53,7 +53,7 @@
 			<span>A</span><span class="caret-animation" bind:this={nodeSubtitle} /><span>.</span>
 		</h2>
 	</div>
-	<div>
+	<div class="sm:inline hidden">
 		<img
 			class="rounded-full aspect-square w-[70vw] link z-30 hover:w-[71vw]
 				transition-[width] duration-300 ease-in-out
@@ -94,7 +94,7 @@
 
 
 <section
-	class="flex flex-col gap-5 items-end text-right justify-center p-10"
+	class="flex flex-col gap-5 items-end sm:text-right justify-center p-10"
 	id="support"
 	bind:this={nodeSupport}
 >
@@ -120,7 +120,8 @@
 		src="/img/leaves.webp"
 		alt="Leaves"
 		class="absolute -left-[10vw] bottom-auto sm:-bottom-[220vh] w-[50vw] hover:w-[51vw] link
-		transition-[width] duration-300 ease-in-out z-10 saturate-150 aspect-square rounded-full"
+		transition-[width] duration-300 ease-in-out z-10 saturate-150 aspect-square rounded-full
+		hidden sm:inline"
 	/>
 </section>
 

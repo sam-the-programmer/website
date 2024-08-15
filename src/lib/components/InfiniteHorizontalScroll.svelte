@@ -58,10 +58,10 @@
 			<div
 				class="flex items-center p-3 flex-col link
                     hover:scale-[1.03] transition-transform duration-300 ease-in-out
-                    text-center bg-base h-40 gap-3 w-[30vw] rounded-xl"
+                    text-center bg-base h-40 gap-2 sm:gap-3 w-[30vmax] rounded-xl"
 			>
-				<h1 class="h-1/4 font-bold text-2xl">{p.name}</h1>
-				<p class="h-2/4 w-10/12">{p.description}</p>
+				<h1 class="h-1/4 font-bold sm:text-2xl">{p.name}</h1>
+				<p class="h-2/4 w-11/12 sm:text-[1rem] text-sm">{p.description}</p>
 				<div class="h-1/4 flex-center gap-3">
 					<span style:background-color={p.col} class="w-3 block rounded-full aspect-square" />
 					<span class="font-semibold italic">{p.tool}</span>
