@@ -7,7 +7,8 @@
 		<a href="/#contact">Contact</a>
 	</div>
 	<div>
-		<h1>Code</h1>
+		<h1>Platforms</h1>
+		<a href="https://linkedin.com/in/s4mm">LinkedIn</a>
 		<a href="https://github.com/sam-the-programmer">GitHub</a>
 		<a href="https://codepen.io/sam-the-programmer">CodePen</a>
 		<a href="https://stackoverflow.com/users/15515166/samtheprogrammer">StackOverflow</a>

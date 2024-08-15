@@ -1,7 +1,7 @@
 export const projectsLeft = [
     {
         name: "Econsumer",
-        description: "A PWA that reduces the carbon footprint of your groceries. Winner of the PA Raspberry Pi competition 2022.",
+        description: "PA Raspberry Pi competition 2022-winning app that reduces the carbon footprint of your groceries.",
         link: "https://econsumer.vercel.app/",
         tool: "TypeScript",
         col: "#007acc"
