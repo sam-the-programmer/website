@@ -69,19 +69,34 @@
 @layer base {
 	:root {
 		font-family: "Space Grotesk", system-ui, sans-serif;
+		@apply text-stone-900 scroll-smooth;
 	}
 
 	* {
 		@apply border-border;
 	}
 
+	a {
+		@apply hover:underline;
+	}
+
 	body {
 		@apply bg-background text-foreground;
 	}
 
-  section {
-    @apply h-screen w-full;
-  }
+	section {
+		@apply min-h-screen w-full;
+	}
+}
+
+@layer components {
+	.footer-content {
+		@apply flex flex-col;
+
+		b {
+			@apply mb-1;
+		}
+	}
 }
 
 @layer utilities {

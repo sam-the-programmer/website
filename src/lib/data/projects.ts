@@ -46,14 +46,14 @@ export const projectsRight = [
     },
     {
         name: "Lifeline",
-        description: "A large-language-model based AI health assistant. My team's entry into the PA Raspberry Pi competition 2024.",
+        description: "A large-language-model based AI health assistant. My team's finalist entry into the PA Raspberry Pi competition 2024.",
         link: "https://github.com/sam-the-programmer/lifeline",
         tool: "Python",
         col: "#f0db4f"
     },
     {
         name: "VSCode Juptyer Theme",
-        description: "Jupyter notebook theme for VS Code - almost 50k installs.",
+        description: "Jupyter notebook theme for VS Code - over 70k installs.",
         link: "https://github.com/sam-the-programmer/vscode-jupyter-theme",
         tool: "TypeScript",
         col: "#007acc"

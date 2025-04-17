@@ -1,31 +1,12 @@
 <script lang="ts">
+	import ProjectMarquee from "$lib/components/custom/ProjectMarquee.svelte";
+	import Separator from "$lib/components/ui/separator/separator.svelte";
+	import { projectsLeft, projectsRight } from "$lib/data/projects";
+	import { addFadeEffect } from "$lib/gsap/effects";
 	import { gsap } from "gsap";
 	import { ScrollTrigger } from "gsap/ScrollTrigger";
-	import { onMount } from "svelte";
 	import Lenis from "lenis";
-	import * as Card from "$lib/components/ui/card/index.ts";
-	import { projectsLeft } from "$lib/data/projects";
-	import { horizontalLoop } from "$lib/gsap/helpers";
-
-	function addFadeEffect(
-		element: Element,
-		start: string = "center center",
-		end: string = "top 5%",
-		markers: boolean = false
-	) {
-		const tl = gsap.timeline();
-
-		tl.to(element, {
-			scrollTrigger: {
-				trigger: element,
-				start: start,
-				end: end,
-				scrub: true,
-				markers: markers
-			},
-			opacity: 0
-		});
-	}
+	import { onMount } from "svelte";
 
 	let elemTitle: HTMLHeadingElement;
 
@@ -41,51 +22,77 @@
 
 		// Make the size of the title element grow as you scroll
 		addFadeEffect(elemTitle);
-
-		[...document.getElementsByClassName("gsap-fade-title")].forEach((element) => {
-			addFadeEffect(element, (markers = true));
-		});
-
-		// Infinite scrolling
-		let cards = gsap.utils.toArray<string>(".marquee-card");
-		gsap.to(cards, {
-			scrollTrigger: cards,
-			opacity: 1
-		});
-
-		let loop = horizontalLoop(cards, { paused: false });
 	});
 </script>
 
-<section class="centre-children-grid">
+<section class="centre-children-grid" id="home">
 	<div bind:this={elemTitle}>
-		<h1 class="px-10 text-center text-9xl text-stone-900">Hi, I'm Sam.</h1>
+		<h1 class="px-10 text-center text-9xl">Hi, I'm Sam.</h1>
 	</div>
 </section>
 
-<section class="centre-children-grid">
-	<div class="gsap-fade-title">
-		<h1 class="px-10 text-center text-6xl text-stone-900">My Projects</h1>
+<section class="centre-children-flex flex-col gap-10" id="projects">
+	<div class="centre-children-flex flex-col gap-3 p-6">
+		<h1 class="text-center text-6xl">My Projects</h1>
+		<p class="max-w-sm text-center text-xl">
+			From fullstack web apps to novel deep learning research...
+		</p>
 	</div>
-	<div class="flex h-40 w-full items-center justify-center gap-3 overflow-hidden bg-black">
-		{#each projectsLeft as proj}
-			<a href={proj.link} class="marquee-card h-full">
-				<Card.Root class="h-full w-[40vw] min-w-80">
-					<Card.Header>
-						<Card.Title>{proj.name}</Card.Title>
-						<Card.Description>{proj.description}</Card.Description>
-					</Card.Header>
-					<!-- <Card.Content>
-						<p>Card Content</p>
-					</Card.Content> -->
-					<Card.Footer>
-						<div class="centre-children-flex">
-							<span class="aspect-square w-4 rounded-full" style:background-color={proj.col}></span>
-							<p>{proj.name}</p>
-						</div>
-					</Card.Footer>
-				</Card.Root>
-			</a>
-		{/each}
+	<div class="centre-children-grid w-full gap-2 overflow-y-visible">
+		<ProjectMarquee projects={projectsLeft} direction="left" />
+		<ProjectMarquee projects={projectsRight} direction="right" />
 	</div>
 </section>
+
+<section class="centre-children-flex flex-col gap-8" id="awards">
+	<h1 class="text-6xl">My Acheivements</h1>
+	<div class="acheivements flex max-w-3xl flex-col">
+		<div>
+			<span>June 2024</span>
+			<Separator orientation="vertical"></Separator>
+			<p>
+				Won <a href="https://www.samsung.com/uk/solvefortomorrow/" target="_blank"
+					><b>Samsung Solve for Tomorrow UK</b></a
+				> alongside a teammate, building an app that improves the efficiency of renewable energy usage
+				by scheduling the power consumption of devices and industrial processes.
+			</p>
+		</div>
+		<div>
+			<span>May 2022</span>
+			<Separator orientation="vertical"></Separator>
+			<p>
+				Won <a
+					href="https://www.paconsulting.com/culture/pa-in-the-community/raspberry-pi-competition-uk"
+					target="_blank"><b>PA Pi Awards 2022</b></a
+				> leading a team of 6 to create an app that gives you eco-friendly alternatives to your groceries
+				to reduce the food miles of your shopping.
+			</p>
+		</div>
+	</div>
+</section>
+
+<section class="centre-children-grid" id="support">
+	<div class="centre-children-flex flex-col gap-3">
+		<h1 class="text-6xl font-bold">Want to support my work?</h1>
+		<p class="max-w-xl text-center text-3xl">
+			Consider donating to <a href="https://plant.ecosia.org/">Ecosia</a>,
+			<a href="https://support.wwf.org.uk/donate-to-wwf">the WWF</a>
+			or any other environmental charities to help combat climate change.
+		</p>
+	</div>
+</section>
+
+<style lang="postcss">
+	.acheivements > div {
+		@apply flex w-full;
+
+		& > span {
+			width: clamp()
+			@apply font-semibold;
+		}
+
+		& > p {
+			@apply pl-8;
+		}
+	}
+</style>
