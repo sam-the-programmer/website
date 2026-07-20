@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer utilities {
+    .display {
+        font-family: var(--font-display);
+    }
+}
