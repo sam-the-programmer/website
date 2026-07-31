@@ -1,0 +1,107 @@
+<section id="book" class="grid place-items-center space-y-8">
+    <div>
+        <h1 class="text-3xl font-bold tracking-tight">Book a Session</h1>
+    </div>
+
+    <div class="flex items-center flex-col">
+        <div>
+            <span>Send me an email:</span>
+        </div>
+        <div>
+            <div class="contact-method">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    fill="#000000"
+                    viewBox="0 0 256 256"
+                    ><path
+                        d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"
+                    ></path></svg
+                >
+                <a
+                    href="mailto:samuelmo.contact@gmail.com"
+                    class="decoration-dotted underline"
+                    target="_blank">samuelmo.contact@gmail.com</a
+                >
+            </div>
+        </div>
+    </div>
+
+    <div class="table-wrapper rounded-xs">
+        <table>
+            <tr>
+                <td>Typical Session Length:</td>
+                <td>1 hour</td>
+            </tr>
+            <tr>
+                <td>
+                    University Admissions Tutoring: <b>(£45/hr)</b>
+                </td>
+                <td>
+                    <ul>
+                        <li>
+                            TMUA (Cambridge CS, Oxford Maths and CS, Imperial
+                            Maths and CS entrance exam)
+                        </li>
+                        <li>
+                            Cambridge Computer Science Interview preparation
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>A-Level Tutoring: <b>(£40/hr)</b></td>
+                <td>
+                    <ul>
+                        <li>Mathematics</li>
+                        <li>Further Mathematics</li>
+                        <li>Computer Science</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>GCSE Tutoring: <b>(£35/hr)</b></td>
+                <td>
+                    <ul>
+                        <li>Mathematics</li>
+                        <li>Further/Additional Mathematics</li>
+                        <li>Computer Science</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<style>
+    @reference "@styles/global.css";
+
+    .contact-method {
+        @apply flex items-center gap-3;
+    }
+
+    .table-wrapper {
+        @apply w-full max-w-2xl overflow-x-auto;
+    }
+
+    table {
+        @apply w-full text-left;
+    }
+
+    td {
+        @apply p-3 align-top;
+    }
+
+    tr:nth-child(even) td {
+        @apply bg-stone-100;
+    }
+
+    tr:nth-child(odd) td {
+        @apply bg-stone-200;
+    }
+
+    ul {
+        @apply list-disc space-y-1 pl-5;
+    }
+</style>

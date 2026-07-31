@@ -1,6 +1,12 @@
 ---
 import "../styles/global.css";
 import { Font } from "astro:assets";
+
+const {
+    title = "Samuel Mo",
+    desc = "The personal website of a founder dedicated to solving climate change.",
+    bodyClasses = ""
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -10,11 +16,12 @@ import { Font } from "astro:assets";
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" href="/favicon.ico" />
-        <Font cssVariable="--font-display" />
+        <Font cssVariable="--font-base" />
         <meta name="generator" content={Astro.generator} />
-        <title>Samuel Mo</title>
+        <title>{title}</title>
+        <meta name="description" content={desc}>
     </head>
-    <body>
+    <body class={bodyClasses}>
         <slot />
     </body>
 </html>

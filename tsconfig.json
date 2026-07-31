@@ -3,7 +3,16 @@
     "include": [".astro/types.d.ts", "**/*", "./worker-configuration.d.ts"],
     "exclude": ["dist"],
     "compilerOptions": {
+        "ignoreDeprecations": "6.0",
         "jsx": "preserve",
-        "jsxImportSource": "solid-js"
+        "jsxImportSource": "solid-js",
+        "baseUrl": ".",
+        "paths": {
+            "@assets/*": ["src/assets/*"],
+            "@components/*": ["src/components/*"],
+            "@layouts/*": ["src/layouts/*"],
+            "@styles/*": ["src/styles/*"],
+            "@utils/*": ["src/utils/*"],
+        }
     }
 }

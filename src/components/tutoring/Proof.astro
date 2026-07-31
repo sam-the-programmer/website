@@ -1,0 +1,49 @@
+---
+import SfTPhoto from "@assets/sft.png";
+import Image from "astro/components/Image.astro";
+---
+
+<section id="proof">
+    <div>
+        <Image
+            src={SfTPhoto}
+            alt="Sam winning Samsung Solve for Tomorrow 2024"
+            loading="eager"
+            id="proof-photo"
+        />
+    </div>
+    <div class="space-y-2">
+        <h2 class="text-center font-bold text-lg tracking-tight">Why I'm Qualified</h2>
+        <p class="text-justify max-w-3xl">
+            I achieved 4 A*s at A-Level, an A* in the EPQ, twelve 9s at GCSEs
+            and balanced that with musical extracurriculars and sport. Alongside
+            this, I won multiple national computer science competitions
+            including
+            <a
+                href="https://news.samsung.com/uk/winners-crowned-as-samsungs-most-promising-tech-innovators-for-the-future-in-solve-for-tomorrow-uk-programme"
+                target="_blank"
+                class="underline"
+            >
+                Samsung Solve for Tomorrow</a
+            >.
+        </p>
+        <p>
+            My A-levels were Mathematics, Further Mathematics, Physics and Computer Science.
+        </p>
+    </div>
+</section>
+
+<style>
+    @reference "@styles/global.css";
+
+    #proof {
+        @apply grid place-items-center gap-4;
+    }
+
+    #proof-photo {
+        max-height: clamp(12rem, 40vh, 22rem);
+        width: auto;
+
+        @apply rounded-xs;
+    }
+</style>

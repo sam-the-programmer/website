@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@layer base {
+    :root {
+        font-family: var(--font-base), monospace;
+        @apply scroll-smooth;
+    }
+}
+
 @layer utilities {
     .display {
         font-family: var(--font-display);

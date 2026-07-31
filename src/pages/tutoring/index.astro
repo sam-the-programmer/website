@@ -1,0 +1,37 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Nav from "@components/tutoring/Nav.astro";
+import Hero from "@components/tutoring/Hero.astro";
+import Proof from "@components/tutoring/Proof.astro";
+import Book from "@components/tutoring/Book.astro";
+---
+
+<Layout
+    title="Samuel Mo | Cambridge interview, TMUA, and A-Level STEM tutoring from a Cambridge Computer Science student"
+    desc="Tutoring for Cambridge Admissions and STEM A-Levels."
+    bodyClasses="bg-stone-50"
+>
+    <Nav />
+
+    <main>
+        <Hero />
+        <Proof />
+        <Book />
+    </main>
+</Layout>
+
+<style>
+    @reference "@styles/global.css";
+
+    main {
+        padding-top: clamp(2rem, 15vmin, 5rem);
+
+        @apply grid place-items-center space-y-32 pb-40;
+    }
+
+    main > :global(section) {
+        padding-left: clamp(2rem, 10vw, 10rem);
+        padding-right: clamp(2rem, 10vw, 10rem);
+        @apply w-full;
+    }
+</style>

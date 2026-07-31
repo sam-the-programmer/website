@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import Portrait from "@assets/portrait.jpg";
+---
+
+<section id="hero">
+    <div id="hero-row">
+        <div>
+            <Image
+                src={Portrait}
+                alt="Portrait."
+                loading="eager"
+                id="hero-image"
+                fetchpriority="high"
+            />
+        </div>
+
+        <div id="hero-content">
+            <div id="hero-header">
+                <h1>Samuel Mo</h1>
+                <h2 class="tracking-tight">
+                    <i>2nd Year Computer Science @ University of Cambridge</i>
+                </h2>
+            </div>
+            <div id="hero-desc">
+                <p>
+                    I'm offering tutoring for TMUA, Cambridge Computer Science
+                    interviews and A-Level/GCSE Mathematics, Further Mathematics
+                    and Computer Science.
+                </p>
+                <p>
+                    As a state-school student studying Computer Science at
+                    Cambridge University, I appreciate how hard finding guidance is when
+                    applying to Oxbridge. I hope that the strategies I developed for
+                    preparation can be useful to students in a similar position.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    @reference "@styles/global.css";
+
+    #hero-row {
+        @apply flex flex-wrap justify-center gap-8 mb-10;
+    }
+
+    #hero-image {
+        width: clamp(12rem, 25vmax, 22rem);
+
+        @apply my-auto aspect-square rounded-xs;
+    }
+
+    #hero-header h1 {
+        @apply text-3xl font-bold tracking-tight sm:text-5xl;
+    }
+
+    #hero-content {
+        @apply flex max-w-xl flex-col justify-end gap-4;
+    }
+
+    #hero-desc {
+        @apply space-y-2;
+    }
+
+    #hero-desc p {
+        @apply md:text-justify;
+    }
+</style>
