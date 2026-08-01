@@ -5,7 +5,13 @@ import { Font } from "astro:assets";
 const {
     title = "Samuel Mo",
     desc = "The personal website of a founder dedicated to solving climate change.",
-    bodyClasses = ""
+    bodyClasses = "",
+    ogTitle = title,
+    ogDesc = desc,
+    ogImage = "/favicon.jpg",
+    ogType = "website",
+    ogUrl,
+    ogSiteName = "Samuel Mo"
 } = Astro.props;
 ---
 
@@ -20,6 +26,18 @@ const {
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
         <meta name="description" content={desc}>
+
+        <meta property="og:site_name" content={ogSiteName} />
+        <meta property="og:title" content={ogTitle} />
+        <meta property="og:description" content={ogDesc} />
+        <meta property="og:type" content={ogType} />
+        {ogUrl && <meta property="og:url" content={ogUrl} />}
+        <meta property="og:image" content={ogImage} />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={ogTitle} />
+        <meta name="twitter:description" content={ogDesc} />
+        <meta name="twitter:image" content={ogImage} />
     </head>
     <body class={bodyClasses}>
         <slot />
